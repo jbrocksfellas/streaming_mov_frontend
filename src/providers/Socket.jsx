@@ -9,7 +9,7 @@ const useSocket = () => {
   return useContext(SocketContext);
 };
 
-const socket = io("http://localhost:8080");
+const socket = io("https://streaming-mov-api.jbrocksfellas.com");
 
 const SocketProvider = ({ children }) => {
   const navigate = useNavigate();
