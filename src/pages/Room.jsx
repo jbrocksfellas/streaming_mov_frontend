@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 // import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import { useSocket } from "../providers/socket";
+import { useSocket } from "../providers/Socket";
 
 export default function Room() {
   const { id } = useParams();

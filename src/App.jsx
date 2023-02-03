@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Room from "./pages/Room";
 import Rooms from "./pages/Rooms";
 import { SocketProvider } from "./providers/Socket";
 
