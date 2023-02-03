@@ -9,7 +9,8 @@ const useSocket = () => {
   return useContext(SocketContext);
 };
 
-const socket = io("https://streaming-mov-api.jbrocksfellas.com");
+const socket = io("streaming-mov-api.jbrocksfellas.com");
+console.log("once");
 
 const SocketProvider = ({ children }) => {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ const SocketProvider = ({ children }) => {
       socket.off("join_request");
       socket.off("joined_room");
       socket.off("join_rejected");
-      socket.off("message_received");
+      socket.off("message");
     };
   }, []);
 
@@ -84,6 +85,7 @@ const SocketProvider = ({ children }) => {
     socket.off("message");
 
     socket.on("message", (message) => {
+      console.log("Message Received: ", message);
       setMessages([...messages, message]);
     });
   }, [messages]);

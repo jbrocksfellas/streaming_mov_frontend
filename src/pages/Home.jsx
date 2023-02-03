@@ -74,17 +74,10 @@ export default function Home() {
       <Layout>
         <Header style={headerStyle}>{view === "join" ? "Enter a room id to join a room" : "Start a room"}</Header>
         <Content style={contentStyle}>
-          <Form
-            name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            style={{ maxWidth: 600, marginTop: 100 }}
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-          >
+          <Form name="basic" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} style={{ marginTop: 100 }} initialValues={{ remember: true }} onFinish={onFinish}>
             <Form.Item
               wrapperCol={{
-                offset: 8,
+                offset: 6,
                 span: 12,
               }}
               name="username"
@@ -100,29 +93,27 @@ export default function Home() {
               />
             </Form.Item>
             {view === "join" && (
-              <>
-                <Form.Item
-                  wrapperCol={{
-                    offset: 8,
-                    span: 12,
+              <Form.Item
+                wrapperCol={{
+                  offset: 6,
+                  span: 12,
+                }}
+                name="roomId"
+                rules={[{ required: true, message: "Please input your Room ID!" }]}
+              >
+                <Input
+                  size="large"
+                  placeholder="Room Code"
+                  value={roomId}
+                  onChange={(e) => {
+                    setRoomId(e.target.value);
                   }}
-                  name="roomId"
-                  rules={[{ required: true, message: "Please input your Room ID!" }]}
-                >
-                  <Input
-                    size="large"
-                    placeholder="Room Code"
-                    value={roomId}
-                    onChange={(e) => {
-                      setRoomId(e.target.value);
-                    }}
-                  />
-                </Form.Item>
-              </>
+                />
+              </Form.Item>
             )}
             <Form.Item
               wrapperCol={{
-                offset: 8,
+                offset: 6,
                 span: 12,
               }}
             >
