@@ -34,7 +34,6 @@ const siderStyle = {
 const footerStyle = {
   textAlign: "center",
   color: "#fff",
-  // backgroundColor: '#7dbcea',
 };
 
 export default function Home() {
