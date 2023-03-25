@@ -16,7 +16,6 @@ const headerStyle = {
   height: 64,
   paddingInline: 50,
   lineHeight: "64px",
-  // backgroundColor: '#7dbcea',
 };
 const contentStyle = {
   textAlign: "center",
